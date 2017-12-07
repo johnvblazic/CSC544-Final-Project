@@ -14,7 +14,7 @@ with open("../pca_data.js","w") as b:
 		lat_category = split[4].split(".")[0]
 		for i in range(100):
 			#get individual images
-			row = i//101
+			row = i//10
 			column = i%10
 			mini_image = image[row*28:row*28+28,column*28:column*28+28]
 			#get pca
@@ -22,7 +22,7 @@ with open("../pca_data.js","w") as b:
 			pc1 = s[0]
 			pc2 = s[1]
 			#write out
-			write_string = "{ time_step:%s, data_category:\"%s\", lat_category:%s, pc1:%s, pc2:%s },\n" % (str(time_step) ,str(data_cat),str(lat_category),str(pc1),str(pc2))
+			write_string = "{ time_step:%s, data_category:\"%s\", lat_category:%s, pc1:%s, pc2:%s, row:%s, column:%s },\n" % (str(time_step) ,str(data_cat),str(lat_category),str(pc1),str(pc2),str(row),str(column))
 			b.write(write_string)
 
 	data_cat = "inf"
@@ -35,7 +35,7 @@ with open("../pca_data.js","w") as b:
 		lat_category = split[4].split(".")[0]
 		for i in range(100):
 			#get individual images
-			row = i//101
+			row = i//10
 			column = i%10
 			mini_image = image[row*28:row*28+28,column*28:column*28+28]
 			#get pca
@@ -43,7 +43,7 @@ with open("../pca_data.js","w") as b:
 			pc1 = s[0]
 			pc2 = s[1]
 			#write out
-			write_string = "{ time_step:%s, data_category:\"%s\", lat_category:%s, pc1:%s, pc2:%s },\n" % (str(time_step) ,str(data_cat),str(lat_category),str(pc1),str(pc2))
+			write_string = "{ time_step:%s, data_category:\"%s\", lat_category:%s, pc1:%s, pc2:%s, row:%s, column:%s },\n" % (str(time_step) ,str(data_cat),str(lat_category),str(pc1),str(pc2),str(row),str(column))
 			b.write(write_string)
 
 	data_cat = "mnist"
@@ -56,7 +56,7 @@ with open("../pca_data.js","w") as b:
 		lat_category = split[4].split(".")[0]
 		for i in range(100):
 			#get individual images
-			row = i//101
+			row = i//10
 			column = i%10
 			mini_image = image[row*28:row*28+28,column*28:column*28+28]
 			#get pca
@@ -64,7 +64,7 @@ with open("../pca_data.js","w") as b:
 			pc1 = s[0]
 			pc2 = s[1]
 			#write out
-			write_string = "{ time_step:%s, data_category:\"%s\", lat_category:%s, pc1:%s, pc2:%s },\n" % (str(time_step) ,str(data_cat),str(lat_category),str(pc1),str(pc2))
+			write_string = "{ time_step:%s, data_category:\"%s\", lat_category:%s, pc1:%s, pc2:%s, row:%s, column:%s },\n" % (str(time_step) ,str(data_cat),str(lat_category),str(pc1),str(pc2),str(row),str(column))
 			b.write(write_string)
 
 	b.write("];")
